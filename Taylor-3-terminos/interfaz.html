@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Taylor (3 términos)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+                          <!-- inicio NavBar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(255, 0, 0);";>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">Menu Principal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Integracion Numerica
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Primeros-temas/interfaz.html">Metodos de Trapecio | Simpson 1/3 | Simpson 3/8</a></li>
+              <li><a class="dropdown-item" href="../Romberg/interfaz.html">Metodo de Romberg</a></li>
+             
+            </ul>
+          </li>
+          <li class="nav-item dropdown">            
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Diferenciacion Numerica
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../Taylor-3-terminos/interfaz.html">Metodo de Taylor 3 Terminos</a></li>
+                <li><a class="dropdown-item" href="../Euler/interfaz.html">Metodo de Euler</a></li>
+                <li><a class="dropdown-item" href="../Runge-kutta/interfaz.html">Metodo de Runge Kutta</a></li>
+              </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Fin NavBar -->
+   <br>
+        <h1>Método de Taylor (3 términos)</h1>
+        <form id="taylor-form">
+            <label for="function">Función \( F(x, y) \):</label>
+            <input type="text" id="function" placeholder="Ejemplo: x + y">
+
+            <label for="x0">Punto inicial (\( x_0 \)):</label>
+            <input type="number" id="x0" step="any" placeholder="Ejemplo: 0">
+
+            <label for="y0">Valor inicial (\( y_0 \)):</label>
+            <input type="number" id="y0" step="any" placeholder="Ejemplo: 1">
+
+            <label for="h">Tamaño del paso (\( h \)):</label>
+            <input type="number" id="stepSize" step="any" placeholder="Ejemplo: 0.25">
+
+            <label for="xTarget">Punto final (\( x_n \)):</label>
+            <input type="number" id="xTarget" step="any" placeholder="Ejemplo: 1">
+
+            <label for="angleUnit">Unidades de ángulo:</label>
+            <select id="angleUnit">
+                <option value="rad">Radianes</option>
+                <option value="deg">Grados</option>
+            </select>
+        
+            <h2>Guía de Sintaxis</h2>
+            <ul>
+                <li>Usa "x" para representar la variable independiente y "y" para la dependiente.</li>
+                <li>Operadores disponibles:
+                    <ul>
+                        <li><code>+</code>: Suma</li>
+                        <li><code>-</code>: Resta</li>
+                        <li><code>*</code>: Multiplicación</li>
+                        <li><code>/</code>: División</li>
+                        <li><code>^</code>: Potenciación (Ejemplo: <code>x^2</code>)</li>
+                    </ul>
+                </li>
+                <li>Funciones matemáticas soportadas: <code>sin, cos, tan, log, exp, sqrt</code>.</li>
+                <li>Ejemplo de función válida: <code>x*y + y^2 - sin(x)</code>.</li>
+            </ul>
+            <button type="button" id="calculate-button">Calcular</button>
+        </form>
+
+        <div id="results-table-container">
+            <h2>Tabla de Resultados</h2>
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>Iteración</th>
+                        <th>xᵢ</th>
+                        <th>yᵢ</th>
+                        <th>y'ᵢ</th>
+                        <th>y''ᵢ</th>
+                        <th>yᵢ₊₁</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="graph"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="taylor.js"></script>
+</body>
+</html>
