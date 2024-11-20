@@ -1,3 +1,4 @@
+// Evento del botón para iniciar el cálculo
 document.getElementById("calculate-button").addEventListener("click", calculateTaylor);
 
 function calculateTaylor() {
@@ -84,7 +85,10 @@ function calculateTaylor() {
 
 // Función para evaluar la entrada del usuario
 function evaluateExpression(expr, x, y, angleUnit) {
-    expr = expr.replace(/\^/g, "**");
+    expr = expr
+        .replace(/\^/g, "**") // Reemplazar potencias
+        .replace(/\b(sin|cos|tan|asin|acos|atan|log|exp|sqrt)\b/g, "Math.$1"); // Reemplazar funciones por Math.
+
     const convertedX = angleUnit === "deg" ? (x * Math.PI) / 180 : x;
     return Function("x", "y", `return ${expr};`)(convertedX, y);
 }
