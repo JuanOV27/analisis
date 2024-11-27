@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    padding: 20px;
+    color: #333;
+}
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+input {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80px;
+    text-align: center;
+}
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: #45a049;
+}
+.result {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.result-inner {
+    display: flex;
+    justify-content: space-between;
+}
+#polinomiosOriginales, #polinomiosSimplificados {
+    width: 45%;
+    padding: 10px;
+}
+#polinomiosOriginales {
+    border-right: 1px solid #ddd;
+}
+h3 {
+    color: #4CAF50;
+    text-align: center;
+}
+.grafico {
+    margin-top: 30px;
+    text-align: center;
+}
+canvas {
+    max-width: 100%;
+    height: 400px;
+}

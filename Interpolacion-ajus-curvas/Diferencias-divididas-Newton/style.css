@@ -1,0 +1,90 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Tabla */
+#tabla {
+    width: 80%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+#tabla th, #tabla td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#tabla th {
+    background-color: #f9f9f9;
+}
+
+#tabla input {
+    width: 90%;
+    padding: 5px;
+}
+
+/* Botones */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Contenedores */
+.formula-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#formulas, #resultados {
+    width: 48%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #fff;
+    height: auto;
+    overflow-y: auto;
+}
+
+/* Gráfico */
+#grafico {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}

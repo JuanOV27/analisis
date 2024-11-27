@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interpolación y Ajustes de Curvas</title>
+  
+  <!-- CSS Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- JavaScript Links -->
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<!-- Inicio NavBar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(255, 0, 0);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">Análisis Numérico</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <!-- Dropdown Menu: Introducción al A.N. -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Introducción al A.N.
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Introduccion/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Introduccion/Raices-multiples-ea/interfaz.html">Raíces múltiples de una 
+        <br>ecuación lineal</a></li>
+        <li><a class="dropdown-item" href="../Introduccion/Raices-enteras-ea/interfaz.html">Raíces enteras de una 
+        <br> ecuación lineal</a></li>
+      </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Solución de E.N.L.
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/bibliografia.html">Bibliografía</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Biseccion/interfaz.html">Bisección</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Newton-Raphson/interfaz.html">Newton-Raphson</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Newton-Raphson-modificado/interfaz.html">Newton-Raphson Modificado</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Punto-fijo/interfaz.html">Punto Fijo</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Regla-falsa/interfaz.html">Regla Falsa</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Secante/interfaz.html">Secante</a></li>
+        </ul>
+        </li>
+      <!-- Other Nav Items -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Solución de
+         sistemas de E.L.
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Sol-sistemas-ecua-lineales/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Sol-sistemas-ecua-lineales/Gauss-Jac-sei/interfaz.html">Gauss-Seidel / Gauss-Jacobi</a></li>
+      </ul>
+      </li>
+      
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Interpolación y ajustes de curvas
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Diferencias-divididas-Newton/interfaz.html">Diferencias Divididas de Newton</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Interpolacion-lineal/interfaz.html">Interpolación Lineal</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Lagrange/interfaz.html">Lagrange</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Regresion-minimos-cuadrados/regresion-lineal/interfaz.html">Regresión lineal</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Regresion-minimos-cuadrados/regresion-polinomial/interfaz.html">Regresión polinomial</a></li>
+      </ul>
+      </li>
+      <!-- Dropdown Menu: Integración numérica -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Integración numérica
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Integracion-numerica/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Integracion-numerica/Primeros-temas/interfaz.html">Primeros Temas</a></li>
+        <li><a class="dropdown-item" href="../Integracion-numerica/Romberg/interfaz.html">Método de Romberg</a></li>
+      </ul>
+      </li>
+      <!-- Dropdown Menu: Diferenciación numérica -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Diferenciación numérica
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Taylor-3-terminos/interfaz.html">Método de Taylor 3 términos</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Euler/interfaz.html">Método de Euler</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Runge-kutta/interfaz.html">Método de Runge Kutta</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Euler-mejorado/interfaz.html">Método de Euler mejorado</a></li>
+      </ul>
+      </li>
+    </ul>
+    </div>
+  </div>
+  </nav>
+  <!-- Fin NavBar -->
+  <!-- Contenido Principal -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8" style="background-color: rgb(255, 255, 255); color: black;">
+        <!-- Sección: Introducción -->
+        <section>
+          <h3 class="method-title">¿Qué es la Interpolación y el Ajuste de Curvas?</h3>
+          <p>
+            La <strong>interpolación</strong> es un método para construir nuevos puntos de datos dentro del rango de un conjunto discreto de puntos conocidos. El <strong>ajuste de curvas</strong> es el proceso de construir una curva, o función matemática, que tiene la mejor concordancia posible con una serie de datos.
+          </p>
+        </section>
+
+        <!-- Sección: Métodos Comunes -->
+        <section>
+          <h3 class="method-title">Métodos Comunes</h3>
+          <p>Algunos de los métodos más utilizados para la interpolación y el ajuste de curvas incluyen:</p>
+          <ul>
+            <li><strong>Interpolación Lineal:</strong> Conecta dos puntos con una línea recta.</li>
+            <li><strong>Interpolación Polinómica:</strong> Utiliza polinomios para conectar varios puntos.</li>
+            <li><strong>Splines:</strong> Utiliza funciones polinómicas por tramos para una mayor suavidad.</li>
+            <li><strong>Mínimos Cuadrados:</strong> Encuentra la curva que minimiza la suma de los cuadrados de las diferencias entre los puntos de datos y la curva.</li>
+          </ul>
+        </section>
+
+        <!-- Sección: Aplicaciones de la Interpolación y Ajuste de Curvas -->
+        <section>
+          <h3 class="method-title">Aplicaciones de la Interpolación y Ajuste de Curvas</h3>
+          <p>La interpolación y el ajuste de curvas tienen una amplia gama de aplicaciones en diversas disciplinas, tales como:</p>
+          <ul>
+            <li><strong>Ingeniería:</strong> Modelado de datos experimentales, diseño de sistemas y simulaciones.</li>
+            <li><strong>Economía:</strong> Análisis de tendencias, predicción de mercados y optimización de recursos.</li>
+            <li><strong>Física:</strong> Análisis de datos experimentales y modelado de fenómenos naturales.</li>
+            <li><strong>Informática:</strong> Gráficos por computadora, procesamiento de imágenes y aprendizaje automático.</li>
+            <li><strong>Biología:</strong> Análisis de datos biológicos y modelado de procesos biológicos.</li>
+          </ul>
+        </section>
+
+        <!-- Inicio card -->
+                    <div class="container mt-3">
+                      <h3>Métodos</h3>
+                      <div id="accordion"></div>
+                        <!-- Interpolación Lineal -->
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="btn" data-bs-toggle="collapse" href="#collapseOneA">Interpolación Lineal</a>
+                          </div>
+                          <div id="collapseOneA" class="collapse" data-bs-parent="#accordion">
+                            <div class="card-body">
+                              <h3>Interpolación Lineal</h3>
+                              <p>La <strong>interpolación lineal</strong> es el método más simple de interpolación. Conecta dos puntos con una línea recta.</p>
+                                <p>Fórmula: \( y = y_0 + \frac{(x - x_0)(y_1 - y_0)}{(x_1 - x_0)} \)</p>
+                                <p>La interpolación lineal es el método más simple de interpolación. Conecta dos puntos con una línea recta y se utiliza para estimar valores intermedios.</p>
+                                <button type="button" onclick="location.href='Interpolacion-Lineal/interfaz.html'">Probar Método</button>
+                              </div>
+                              </div>
+                            </div>
+                            <!-- Interpolación de Lagrange -->
+                            <div class="card">
+                              <div class="card-header">
+                              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwoA">Interpolación de Lagrange</a>
+                              </div>
+                              <div id="collapseTwoA" class="collapse" data-bs-parent="#accordion">
+                              <div class="card-body">
+                                <h3>Interpolación de Lagrange</h3>
+                                <p>La <strong>interpolación de Lagrange</strong> utiliza polinomios de Lagrange para conectar varios puntos.</p>
+                                <p>Fórmula: \( P(x) = \sum_{i=0}^{n} y_i \prod_{\substack{0 \le j \le n \\ j \ne i}} \frac{x - x_j}{x_i - x_j} \)</p>
+                                <p>Este método es útil para interpolar un conjunto de puntos mediante un polinomio que pasa exactamente por cada uno de los puntos dados.</p>
+                                <button type="button" onclick="location.href='Interpolacion-Lagrange/interfaz.html'">Probar Método</button>
+                              </div>
+                              </div>
+                            </div>
+                            <!-- Método de las Diferencias Divididas de Newton -->
+                            <div class="card">
+                              <div class="card-header">
+                              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">Método de las Diferencias Divididas de Newton</a>
+                              </div>
+                              <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                              <div class="card-body">
+                                <h3>Método de las Diferencias Divididas de Newton</h3>
+                                <p>El <strong>método de las diferencias divididas de Newton</strong> es útil para interpolar datos con un polinomio de Newton.</p>
+                                <p>Fórmula: \( P(x) = a_0 + a_1(x - x_0) + a_2(x - x_0)(x - x_1) + \cdots + a_n(x - x_0)(x - x_1) \cdots (x - x_{n-1}) \)</p>
+                                <p>Este método construye el polinomio interpolante de Newton utilizando las diferencias divididas, lo que permite una forma eficiente de agregar nuevos puntos de datos.</p>
+                                <button type="button" onclick="location.href='Diferencias-Divididas-Newton/interfaz.html'">Probar Método</button>
+                              </div>
+                              </div>
+                            </div>
+                            <!-- Regresión de Mínimos Cuadrados -->
+                            <div class="card">
+                              <div class="card-header">
+                              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">Regresión de Mínimos Cuadrados</a>
+                              </div>
+                              <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+                              <div class="card-body">
+                                <h3>Regresión de Mínimos Cuadrados</h3>
+                                <p>La <strong>regresión de mínimos cuadrados</strong> encuentra la curva que minimiza la suma de los cuadrados de las diferencias entre los puntos de datos y la curva.</p>
+                                <p>Fórmula: \( S = \sum_{i=1}^{n} (y_i - f(x_i))^2 \)</p>
+                                <p>Este método se utiliza para ajustar una curva a un conjunto de datos de manera que la suma de los cuadrados de las diferencias entre los valores observados y los valores predichos por la curva sea mínima.</p>
+                                <button type="button" onclick="location.href='Minimos-Cuadrados/interfaz.html'">Probar Método</button>
+                              </div>
+                              </div>
+                            </div>
+                            </div>
+                          </div>
+        <!-- Fin card -->
+        <div class="col-sm-4" style="background-color: rgb(255, 255, 255); color: black;">
+          <!-- Información Adicional -->
+          <h2>Origen de los Métodos</h2>
+          <div class="card" style="width:100%">
+            <img class="card-img-top" src="../Img/lagrange.jpg" alt="Joseph-Louis Lagrange" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">Joseph-Louis Lagrange</h4>
+              <p class="card-text">Matemático francés conocido por su trabajo en interpolación polinómica.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalOrigen">
+                Ver Origen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Offcanvas Autores -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasAutores" aria-labelledby="offcanvasAutoresLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasAutoresLabel">Autores Destacados</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Los siguientes autores contribuyeron significativamente al desarrollo de los métodos de interpolación y ajuste de curvas:</p>
+      <ul>
+        <li><strong>Joseph-Louis Lagrange:</strong><br> 
+        <img src="../Img/lagrange.jpg" alt="Joseph-Louis Lagrange" style="width:50px; height:auto;"><br> 
+        Conocido por su trabajo en interpolación polinómica.</li>
+        <li><strong>Carl Friedrich Gauss:</strong><br> 
+        <img src="../Img/gauss.jpg" alt="Carl Friedrich Gauss" style="width:50px; height:auto;"><br> 
+        Contribuyó al desarrollo de métodos de ajuste de curvas.</li>
+        <li><strong>Isaac Newton:</strong><br> 
+        <img src="../Img/newton.jpg" alt="Isaac Newton" style="width:50px; height:auto;"><br> 
+        Desarrolló el método de interpolación de Newton.</li>
+        <li><strong>John von Neumann:</strong><br> 
+        <img src="../Img/jhon.jpg" alt="John von Neumann" style="width:50px; height:auto;"><br> 
+        Pionero en el análisis numérico y computación.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sección: Referencias -->
+  <div>
+    <br>
+    <h3>Referencias</h3>
+    <ul>
+      <li><a href="https://www.academia.edu/36380579/INTERPOLACION_Y_AJUSTE_DE_CURVAS" target="_blank">INTERPOLACION Y AJUSTE DE CURVAS</a></li>
+      <li><a href="https://bioaiteamlearning.github.io/Metodos_2023_03_UAM/Unidad3.html" target="_blank">Unidad 3: Ajuste de Curvas e Interpolación</a></li>
+      <li><a href="https://repository.uamerica.edu.co/bitstream/20.500.11839/7832/1/794118-2018.pdf" target="_blank">4. AJUSTE DE CURVAS</a></li>
+      <li><a href="https://sga.unemi.edu.ec/media/recursotema/Documento_202012316516.pdf" target="_blank">Metodos numericos: ajuste de curvas</a></li>
+    </ul>
+  </div>
+  
+
+  <!-- Modal Origen -->
+  <div class="modal" id="modalOrigen">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Origen de los Métodos</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <p>
+            El estudio de la interpolación y el ajuste de curvas se remonta a la antigüedad, con contribuciones notables de matemáticos como Isaac Newton y Joseph-Louis Lagrange. Estos métodos han evolucionado significativamente con el avance de la computación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Data -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diferenciación numerica</title>
+  <!-- External Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <!-- External Scripts -->
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<!-- Inicio NavBar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(255, 0, 0);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">Análisis Numérico</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <!-- Dropdown Menu: Introducción al A.N. -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Introducción al A.N.
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Introduccion/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Introduccion/Raices-multiples-ea/interfaz.html">Raíces múltiples de una 
+        <br>ecuación lineal</a></li>
+        <li><a class="dropdown-item" href="../Introduccion/Raices-enteras-ea/interfaz.html">Raíces enteras de una 
+        <br> ecuación lineal</a></li>
+      </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Solución de E.N.L.
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/bibliografia.html">Bibliografía</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Biseccion/interfaz.html">Bisección</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Newton-Raphson/interfaz.html">Newton-Raphson</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Newton-Raphson-modificado/interfaz.html">Newton-Raphson Modificado</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Punto-fijo/interfaz.html">Punto Fijo</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Regla-falsa/interfaz.html">Regla Falsa</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Secante/interfaz.html">Secante</a></li>
+        </ul>
+        </li>
+      <!-- Other Nav Items -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Solución de
+         sistemas de E.L.
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Sol-sistemas-ecua-lineales/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Sol-sistemas-ecua-lineales/Gauss-Jac-sei/interfaz.html">Gauss-Seidel / Gauss-Jacobi</a></li>
+      </ul>
+      </li>
+      
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Interpolación y ajustes de curvas
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Diferencias-divididas-Newton/interfaz.html">Diferencias Divididas de Newton</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Interpolacion-lineal/interfaz.html">Interpolación Lineal</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Lagrange/interfaz.html">Lagrange</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Regresion-minimos-cuadrados/regresion-lineal/interfaz.html">Regresión lineal</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Regresion-minimos-cuadrados/regresion-polinomial/interfaz.html">Regresión polinomial</a></li>
+      </ul>
+      </li>
+      <!-- Dropdown Menu: Integración numérica -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Integración numérica
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Integracion-numerica/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Integracion-numerica/Primeros-temas/interfaz.html">Primeros Temas</a></li>
+        <li><a class="dropdown-item" href="../Integracion-numerica/Romberg/interfaz.html">Método de Romberg</a></li>
+      </ul>
+      </li>
+      <!-- Dropdown Menu: Diferenciación numérica -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Diferenciación numérica
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Taylor-3-terminos/interfaz.html">Método de Taylor 3 términos</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Euler/interfaz.html">Método de Euler</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Runge-kutta/interfaz.html">Método de Runge Kutta</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Euler-mejorado/interfaz.html">Método de Euler mejorado</a></li>
+      </ul>
+      </li>
+    </ul>
+    </div>
+  </div>
+  </nav>
+  <!-- Fin NavBar -->
+
+  <br>
+<div class="container"> <!-- Inicio Contenido Principal -->
+  <div class="row">
+    <!-- Sección Principal -->
+    <div class="col-sm-8" style="background-color: rgb(255, 255, 255); color: black;">
+      <h3>Diferenciación Numérica</h3>
+      <p>La <strong>diferenciación numérica</strong> es una técnica matemática utilizada para aproximar la derivada de una función en un punto específico. Es particularmente útil cuando la función es compleja, está definida mediante datos discretos, o no se puede derivar de forma analítica. Utilizando valores discretos, estos métodos permiten calcular derivadas con alta precisión, siendo una herramienta indispensable en matemáticas aplicadas.</p>
+      <div class="section-title">Conceptos</div>
+      <p>La diferenciación numérica se basa en aproximar la derivada de una función usando valores discretos. Existen varios métodos, entre ellos:</p>
+      <ul>
+        <li><strong>Diferenciación hacia adelante:</strong></li>
+        <div class="formula">
+          \( f'(x) \approx \frac{f(x+h) - f(x)}{h} \)
+        </div>
+        <p>donde \( h \) es un pequeño incremento.</p>
+
+        <li><strong>Diferenciación hacia atrás:</strong></li>
+        <div class="formula">
+          \( f'(x) \approx \frac{f(x) - f(x-h)}{h} \)
+        </div>
+
+        <li><strong>Diferenciación centrada:</strong></li>
+        <div class="formula">
+          \( f'(x) \approx \frac{f(x+h) - f(x-h)}{2h} \)
+        </div>
+        <p>Este método es más preciso ya que utiliza información de ambos lados del punto \( x \).</p>
+      </ul>
+
+      <div class="section-title">Autores y Contribuciones</div>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#autores2">ver autores</button>
+      <!-- Inicio Offcanvas -->
+      <div class="offcanvas offcanvas-start" id="autores2">
+        <div class="offcanvas-header">
+          <h1 class="offcanvas-title">Autores</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul>
+            <li><strong>Isaac Newton y Gottfried Wilhelm Leibniz:</strong>
+              <br>
+              <img src="../Img/newton.jpg" alt="" width="30%">
+              <br>
+              Fundadores del cálculo, sentaron las bases para la diferenciación y la integración. <br>
+            </li>
+            <li><strong>Leonhard Euler:</strong>
+              <br>
+              <img src="../Img/lorentEuler.jpg" alt="" width="30%">
+              <br>
+              Realizó importantes aportes al desarrollo de métodos numéricos en el siglo XVIII. <br>
+            </li>
+            <li><strong>Joseph-Louis Lagrange:</strong>
+              <br>
+              <img src="../Img/lagrange.jpg" alt="" width="25%">
+              <br>
+              Su trabajo en interpolación y polinomios es clave para los métodos de diferenciación numérica. <br>
+            </li>
+            <li><strong>Carl Friedrich Gauss:</strong>
+              <br>
+              <img src="../Img/gauss.jpg" alt="" width="25%">
+              <br>
+              Contribuyó a la precisión de los métodos numéricos con su trabajo en teoría de errores. <br>
+            </li>
+          </ul>
+          <button class="btn btn-danger" type="button" data-bs-dismiss="offcanvas">Cerrar</button>
+        </div>
+      </div>
+      <!-- Fin Offcanvas -->
+
+      <br><br>
+
+      <div class="section-title">Conclusión</div>
+      <p>
+        La diferenciación numérica es una herramienta crucial en matemáticas aplicadas, utilizada en campos como la ingeniería, la física y la economía. 
+        Su evolución ha sido impulsada por la necesidad de resolver problemas complejos que no pueden abordarse mediante métodos analíticos. 
+      </p>
+    </div>
+
+    <!-- Sección Lateral -->
+    <div class="col-sm-4" style="background-color: rgb(255, 255, 255); color: black;">
+      <h2>Origen de la diferenciación numerica</h2>
+      <div class="card" style="width:100%">
+        <img class="card-img-top" src="../Img/newton.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">Isacc Newton y Gottfried Wilhelm Leibniz</h4>
+          <p class="card-text">Matematicos</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">
+            Ver Origen
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Contenido Principal -->
+
+
+  <br><br>
+
+  <!-- Inicio Card Metodos -->
+  <div class="container mt-3">
+    <h2>Metodos</h2>
+    <div id="accordion">
+      <!-- Método de Taylor 3 términos -->
+      <div class="card">
+        <div class="card-header">
+          <a class="btn" data-bs-toggle="collapse" href="#collapseOneA">
+            Método de Taylor 3 términos
+          </a>
+        </div>
+        <div id="collapseOneA" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            <h3>Método de Taylor (3 términos)</h3>
+            <p>El <strong>método de Taylor</strong> es una técnica numérica para resolver ecuaciones diferenciales ordinarias. Al utilizar la expansión de Taylor, este método aproxima la solución de una función considerando términos derivados. Aquí se muestra la versión con tres términos, adecuada para problemas con intervalos pequeños.</p>
+            <div class="section-title">Fórmulas</div>
+            <p><strong>Serie de Taylor (tres términos):</strong></p>
+            <div class="formula">
+              \( y(x + h) \approx y(x) + h y'(x) + \frac{h^2}{2} y''(x) \)
+            </div>
+            <p>donde:</p>
+            <ul>
+              <li>\( h \): tamaño del paso.</li>
+              <li>\( y(x) \): valor inicial.</li>
+              <li>\( y'(x) \): primera derivada de \( y \).</li>
+              <li>\( y''(x) \): segunda derivada de \( y \).</li>
+            </ul>
+            <p>Las derivadas de orden superior se calculan a partir de la ecuación diferencial original, dependiendo del problema específico.</p>
+            <button type="button" onclick="location.href='Taylor-3-terminos/interfaz.html'">Probar Metodo</button>
+          </div>
+        </div>
+      </div>
+      <!-- Método de Euler -->
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwoA">
+            Método de Euler
+          </a>
+        </div>
+        <div id="collapseTwoA" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            <h3>Método de Euler</h3>
+            <p>El <strong>método de Euler</strong> es un método numérico sencillo pero eficaz para resolver ecuaciones diferenciales ordinarias. Se basa en aproximar la solución utilizando la pendiente de la derivada en cada paso. Aunque su precisión depende del tamaño del paso, es útil como introducción a métodos numéricos más avanzados.</p>
+            <div class="section-title">Fórmula</div>
+            <p><strong>Ecuación base del método de Euler:</strong></p>
+            <div class="formula">
+              \( y_{n+1} = y_n + h f(x_n, y_n) \)
+            </div>
+            <p>donde:</p>
+            <ul>
+              <li>\( y_n \): valor actual de la solución.</li>
+              <li>\( y_{n+1} \): valor estimado de la solución en el siguiente paso.</li>
+              <li>\( h \): tamaño del paso.</li>
+              <li>\( f(x_n, y_n) \): valor de la derivada en el punto \( (x_n, y_n) \).</li>
+            </ul>
+            <p>Este método avanza paso a paso, utilizando un tamaño \( h \) fijo, para estimar valores sucesivos de la solución.</p>
+            <button type="button" onclick="location.href='Euler/interfaz.html'">Probar Metodo</button>
+          </div>
+        </div>
+      </div>
+      <!-- Método de Runge-Kutta -->
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+            Método de Runge-Kutta
+          </a>
+        </div>
+        <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            <h3>Método de Runge-Kutta (RK4)</h3>
+            <p>El <strong>método de Runge-Kutta</strong> es una técnica numérica precisa y eficiente para resolver ecuaciones diferenciales ordinarias. El método de cuarto orden (\( RK4 \)) es especialmente popular debido a su equilibrio entre precisión y complejidad computacional.</p>
+            <div class="section-title">Fórmulas</div>
+            <p><strong>Cálculo de incrementos intermedios:</strong></p>
+            <div class="formula">
+              \( k_1 = f(x_n, y_n) \)  
+              \( k_2 = f\left(x_n + \frac{h}{2}, y_n + \frac{h}{2}k_1\right) \)  
+              \( k_3 = f\left(x_n + \frac{h}{2}, y_n + \frac{h}{2}k_2\right) \)  
+              \( k_4 = f(x_n + h, y_n + hk_3) \)
+            </div>
+            <p><strong>Actualización del valor de \( y \):</strong></p>
+            <div class="formula">
+              \( y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4) \)
+            </div>
+            <p>Este método evalúa la pendiente en diferentes puntos dentro del intervalo para obtener una aproximación precisa de la solución en el siguiente paso.</p>
+            <button type="button" onclick="location.href='Runge-kutta/interfaz.html'">Probar Metodo</button>
+          </div>
+        </div>
+      </div>
+      <!-- Método de Euler-mejorado -->
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapsefour">
+            Método de Euler-mejorado
+          </a>
+        </div>
+<div id="collapsefour" class="collapse" data-bs-parent="#accordion">
+  <div class="card-body">
+    <h1>Método de Euler Mejorado</h1>
+    <p>
+      El método de Euler mejorado, también conocido como método del punto medio, es una técnica numérica utilizada para resolver ecuaciones diferenciales ordinarias. Este método mejora la precisión del método de Euler básico al considerar el promedio de las pendientes al inicio y al final de cada intervalo.
+    </p>
+    <h2>Fórmulas</h2>
+    <div class="formula">
+      <p><strong>1. Predictor:</strong></p>
+      <p>\( y_p = y_n + h \cdot f(x_n, y_n) \)</p>
+    </div>
+    <div class="formula">
+      <p><strong>2. Corrector:</strong></p>
+      <p>\( y_{n+1} = y_n + \frac{h}{2} \left[ f(x_n, y_n) + f(x_{n+1}, y_p) \right] \)</p>
+    </div>
+    <p>
+      Este método es ampliamente utilizado por su simplicidad y mayor precisión en comparación con el método de Euler estándar.
+    </p>
+    <button type="button" onclick="location.href='Euler-mejorado/interfaz.html'">Probar Metodo</button>
+  </div>
+</div>
+        </div>
+      </div>
+        <!-- Inicio Sección de Referencias -->
+  <div class="container mt-3">
+    <h2>Referencias</h2>
+    <ul>
+      <li><a href="https://mate.uprh.edu/~pnegron/notas4061/numdif/numdif.htm" target="_blank">Diferenciación e Integración Numérica</a></li>
+      <li><a href="https://blog.espol.edu.ec/analisisnumerico/diferenciacion-numerica/" target="_blank">5.5 Diferenciación numérica</a></li>
+      <li><a href="https://fcen.uncuyo.edu.ar/upload/2018-diferenciacion-rev2.pdf" target="_blank">Diferenciación numérica</a></li>
+      <li><a href="https://sga.unemi.edu.ec/media/recursotema/Documento_20212815501.pdf" target="_blank">Metodos numericos: Diferenciacion numerica</a></li>
+    </ul>
+  </div>
+  <!-- Fin Sección de Referencias -->
+    </div>
+  </div>
+  <!-- Fin Card Metodos -->
+
+  <!-- Inicio Ventana Modal -->
+  <div class="modal" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: #000000;">Origen</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <p>La diferenciación numérica tiene sus raíces en el desarrollo del cálculo diferencial en el siglo XVII. Isaac Newton y Gottfried Wilhelm Leibniz, de manera independiente, desarrollaron las bases del cálculo, incluyendo conceptos fundamentales de la diferenciación. A lo largo de los siglos, matemáticos como Leonhard Euler, Joseph-Louis Lagrange y Carl Friedrich Gauss hicieron contribuciones significativas que permitieron el avance de métodos numéricos para la diferenciación.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Ventana Modal -->
+</div>
+ 
+</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>

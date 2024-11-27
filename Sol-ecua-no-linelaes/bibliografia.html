@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solucion de ecuaciones no lineales</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <!-- MathJax Script -->
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<!-- Inicio NavBar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(255, 0, 0);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html">Análisis Numérico</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <!-- Dropdown Menu: Introducción al A.N. -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Introducción al A.N.
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Introduccion/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Introduccion/Raices-multiples-ea/interfaz.html">Raíces múltiples de una 
+        <br>ecuación lineal</a></li>
+        <li><a class="dropdown-item" href="../Introduccion/Raices-enteras-ea/interfaz.html">Raíces enteras de una 
+        <br> ecuación lineal</a></li>
+      </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Solución de E.N.L.
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/bibliografia.html">Bibliografía</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Biseccion/interfaz.html">Bisección</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Newton-Raphson/interfaz.html">Newton-Raphson</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Newton-Raphson-modificado/interfaz.html">Newton-Raphson Modificado</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Punto-fijo/interfaz.html">Punto Fijo</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Regla-falsa/interfaz.html">Regla Falsa</a></li>
+          <li><a class="dropdown-item" href="../Sol-ecua-no-linelaes/Secante/interfaz.html">Secante</a></li>
+        </ul>
+        </li>
+      <!-- Other Nav Items -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Solución de
+         sistemas de E.L.
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Sol-sistemas-ecua-lineales/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Sol-sistemas-ecua-lineales/Gauss-Jac-sei/interfaz.html">Gauss-Seidel / Gauss-Jacobi</a></li>
+      </ul>
+      </li>
+      
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Interpolación y ajustes de curvas
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Diferencias-divididas-Newton/interfaz.html">Diferencias Divididas de Newton</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Interpolacion-lineal/interfaz.html">Interpolación Lineal</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Lagrange/interfaz.html">Lagrange</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Regresion-minimos-cuadrados/regresion-lineal/interfaz.html">Regresión lineal</a></li>
+        <li><a class="dropdown-item" href="../Interpolacion-ajus-curvas/Regresion-minimos-cuadrados/regresion-polinomial/interfaz.html">Regresión polinomial</a></li>
+      </ul>
+      </li>
+      <!-- Dropdown Menu: Integración numérica -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Integración numérica
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Integracion-numerica/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Integracion-numerica/Primeros-temas/interfaz.html">Primeros Temas</a></li>
+        <li><a class="dropdown-item" href="../Integracion-numerica/Romberg/interfaz.html">Método de Romberg</a></li>
+      </ul>
+      </li>
+      <!-- Dropdown Menu: Diferenciación numérica -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Diferenciación numérica
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Taylor-3-terminos/interfaz.html">Método de Taylor 3 términos</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Euler/interfaz.html">Método de Euler</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Runge-kutta/interfaz.html">Método de Runge Kutta</a></li>
+        <li><a class="dropdown-item" href="../Diferenciacion-numerica/Euler-mejorado/interfaz.html">Método de Euler mejorado</a></li>
+      </ul>
+      </li>
+    </ul>
+    </div>
+  </div>
+  </nav>
+  <!-- Fin NavBar -->
+
+  <!-- Contenido Principal -->
+  <div class="container">
+    <div class="row">
+      <!-- Columna Principal -->
+      <div class="col-sm-8" style="background-color: rgb(255, 255, 255); color: black;">
+        <!-- Sección: ¿Qué son las ecuaciones no lineales? -->
+        <section>
+          <h3 class="method-title">¿Que son las ecuaciones no lineales?</h3>
+          <p>
+            Las <strong>ecuaciones no lineales</strong> son aquellas en las que la variable no aparece solo en términos de primer grado. Esto significa que pueden incluir potencias, raíces, funciones trigonométricas, exponenciales, entre otros. La solución de estas ecuaciones implica encontrar los valores de las variables que satisfacen la ecuación, lo cual puede ser complicado debido a la naturaleza no lineal de las relaciones.
+          </p>
+        </section>
+        <!-- Sección: Autores Destacados -->
+        <section>
+          <h3 class="method-title">Autores Destacados</h3>
+          <p>Algunos de los pioneros en el desarrollo de métodos numéricos incluyen:</p>
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#autores2">ver autores</button>
+        </section>
+        <!-- Sección: Aplicaciones -->
+        <section>
+          <h3 class="method-title">Aplicaciones</h3>
+          <p>Las ecuaciones no lineales aparecen en diversas disciplinas, y su solución es crucial en muchos campos:</p>
+          <ul>
+            <li><strong>Ingeniería:</strong> Diseño de estructuras, análisis de circuitos eléctricos y dinámica de fluidos.</li>
+            <li><strong>Física:</strong> Modelado de fenómenos como la mecánica cuántica y la relatividad.</li>
+            <li><strong>Economía:</strong> Modelos de optimización y análisis de sistemas económicos complejos.</li>
+            <li><strong>Biología:</strong> Modelos de crecimiento poblacional y dinámica de ecosistemas.</li>
+          </ul>
+        </section>
+        <!-- Sección: Métodos Comunes -->
+        <section>
+          <h3 class="method-title">Métodos Comunes</h3>
+          <p>Algunos de los métodos numéricos más utilizados para resolver ecuaciones no lineales incluyen:</p>
+          <ul>
+            <li><strong>Método de Bisección:</strong> Divide un intervalo en dos y selecciona el subintervalo donde la función cambia de signo.</li>
+            <li><strong>Método de Newton-Raphson:</strong> Utiliza derivadas para encontrar sucesivas aproximaciones a la raíz.</li>
+            <li><strong>Método de la Secante:</strong> Similar al de Newton, pero no requiere el cálculo de derivadas.</li>
+            <li><strong>Método de Punto Fijo:</strong> Requiere reescribir la ecuación en una forma que permita iteraciones sucesivas.</li>
+          </ul>
+        </section>
+        <!-- Sección: Importancia -->
+        <section>
+          <h3 class="method-title">Importancia</h3>
+          <p>
+            La solución de ecuaciones no lineales es esencial en el análisis numérico porque muchos problemas del mundo real son inherentemente no lineales. Los métodos numéricos permiten a los científicos e ingenieros modelar y resolver problemas complejos de manera efectiva, proporcionando soluciones que son fundamentales para la investigación y la aplicación práctica.
+          </p>
+        </section>
+
+        <div class="container mt-3">
+          <h3>Métodos</h3>
+          <div id="accordion"></div>
+            <!-- Método de Bisección -->
+            <!-- Método de Bisección -->
+        <div class="card">
+          <div class="card-header">
+            <a class="btn" data-bs-toggle="collapse" href="#collapseOneA">Método de Bisección</a>
+          </div>
+          <div id="collapseOneA" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h3>Método de Bisección</h3>
+              <p>El <strong>método de bisección</strong> divide un intervalo en dos y selecciona el subintervalo donde la función cambia de signo.</p>
+              <p>Fórmula:</p>
+              <p>\[ c = \frac{a + b}{2} \]</p>
+              <p>Donde \(a\) y \(b\) son los extremos del intervalo y \(c\) es el punto medio.</p>
+              <button type="button" onclick="location.href='Biseccion/interfaz.html'">Probar Método</button>
+            </div>
+          </div>
+        </div>
+        <!-- Regla Falsa -->
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwoA">Regla Falsa</a>
+          </div>
+          <div id="collapseTwoA" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h3>Regla Falsa</h3>
+              <p>La <strong>regla falsa</strong> es similar al método de bisección, pero utiliza una línea secante para aproximar la raíz.</p>
+              <p>Fórmula:</p>
+              <p>\[ c = b - f(b) \frac{b - a}{f(b) - f(a)} \]</p>
+              <p>Donde \(a\) y \(b\) son los extremos del intervalo y \(c\) es el punto de intersección de la secante con el eje x.</p>
+              <button type="button" onclick="location.href='Regla-Falsa/interfaz.html'">Probar Método</button>
+            </div>
+          </div>
+        </div>
+        <!-- Método de Punto Fijo -->
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">Método de Punto Fijo</a>
+          </div>
+          <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h3>Método de Punto Fijo</h3>
+              <p>El <strong>método de punto fijo</strong> requiere reescribir la ecuación en una forma que permita iteraciones sucesivas.</p>
+              <p>Fórmula:</p>
+              <p>\[ x_{n+1} = g(x_n) \]</p>
+              <p>Donde \(g(x)\) es una función que se elige para que las iteraciones converjan a la raíz.</p>
+              <button type="button" onclick="location.href='Punto-Fijo/interfaz.html'">Probar Método</button>
+            </div>
+          </div>
+        </div>
+        <!-- Método de Newton-Raphson -->
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">Método de Newton-Raphson</a>
+          </div>
+          <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h3>Método de Newton-Raphson</h3>
+              <p>El <strong>método de Newton-Raphson</strong> utiliza derivadas para encontrar sucesivas aproximaciones a la raíz.</p>
+              <p>Fórmula:</p>
+              <p>\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \]</p>
+              <p>Donde \(f(x)\) es la función y \(f'(x)\) es su derivada.</p>
+              <button type="button" onclick="location.href='Newton-Raphson/interfaz.html'">Probar Método</button>
+            </div>
+          </div>
+        </div>
+        <!-- Método de la Secante -->
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFive">Método de la Secante</a>
+          </div>
+          <div id="collapseFive" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h3>Método de la Secante</h3>
+              <p>El <strong>método de la secante</strong> es similar al de Newton, pero no requiere el cálculo de derivadas.</p>
+              <p>Fórmula:</p>
+              <p>\[ x_{n+1} = x_n - f(x_n) \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})} \]</p>
+              <p>Donde \(x_n\) y \(x_{n-1}\) son dos aproximaciones sucesivas.</p>
+              <button type="button" onclick="location.href='Secante/interfaz.html'">Probar Método</button>
+            </div>
+          </div>
+        </div>
+        <!-- Método de Newton-Raphson Modificado -->
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseSix">Método de Newton-Raphson Modificado</a>
+          </div>
+          <div id="collapseSix" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <h3>Método de Newton-Raphson Modificado</h3>
+              <p>El <strong>método de Newton-Raphson modificado</strong> es una variación del método de Newton-Raphson que mejora la convergencia.</p>
+              <p>Fórmula:</p>
+              <p>\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \left( 1 + \frac{f(x_n)}{f''(x_n)} \right) \]</p>
+              <p>Donde \(f(x)\) es la función, \(f'(x)\) es su derivada y \(f''(x)\) es la segunda derivada.</p>
+              <button type="button" onclick="location.href='Newton-Raphson-Modificado/interfaz.html'">Probar Método</button>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+        </div>
+        
+      </div>
+      <!-- Columna Secundaria -->
+      <div class="col-sm-4" style="background-color: rgb(255, 255, 255); color: black;">
+        <h2>Origen de la Solucion de ecuaciones no lineales</h2>
+        <div class="card" style="width:100%">
+          <img class="card-img-top" src="../Img/newton.jpg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">Isacc Newton y Gottfried Wilhelm Leibniz</h4>
+            <p class="card-text">Matematicos</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">
+              ver origen
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Columna de Referencias -->
+      <div class="col-sm-12" style="background-color: rgb(255, 255, 255); color: black;">
+        <br>
+        <h3>Referencias</h3>
+        <ul>
+          <li><a href="https://carlosivanrestrepo.wordpress.com/wp-content/uploads/2019/08/metodos-numericos-problemas-resueltos-y-practicas-isaac-a-garcia.pdf" target="_blank">Métodos
+            numéricos
+            Problemas
+            resueltos
+            y prácticas.</a></li>
+          <li><a href="https://personales.unican.es/gila/Lectura2MN22-23.pdf" target="_blank">Resolución numérica de ecuaciones no
+            lineales.</a></li>
+          <li><a href="https://www3.fi.mdp.edu.ar/metodos/teorias/2017/MN%20-%202017a%20-%204%20-%20Sistemas%20ec%20-%20v1.pdf" target="_blank"> Solución de Sistemas de Ecuaciones lineales y no lineales.</a></li>
+          <li><a href="https://www.ugr.es/~mpasadas/ftp/Tema2_apuntes.pdf" target="_blank">Resolución de Ecuaciones
+            No Lineales
+            .</a></li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Origen -->
+  <div class="modal" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: #000000;">Origen</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body" style="color: #000000;">
+          <p>El estudio de las ecuaciones no lineales tiene raíces profundas en la historia de las matemáticas. Desde las civilizaciones antiguas, se han utilizado métodos para resolver ecuaciones de diversas formas. Sin embargo, el desarrollo formal de métodos numéricos para resolver ecuaciones no lineales comenzó a tomar forma en los siglos XVII y XVIII:</p>
+          <ul>
+            <li><strong>Siglo XVII:</strong> Matemáticos como Isaac Newton y Gottfried Wilhelm Leibniz sentaron las bases del cálculo, lo que permitió el desarrollo de métodos para encontrar raíces de ecuaciones no lineales.</li>
+            <li><strong>Siglo XVIII:</strong> Leonhard Euler y otros contribuyeron a la formalización de métodos iterativos, como el método de Newton-Raphson, que se utiliza ampliamente hoy en día.</li>
+          </ul>
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Modal -->
+
+  <!-- Offcanvas: Autores -->
+  <div class="offcanvas offcanvas-start" id="autores2">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title">Autores</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul>
+        <li><strong>Isaac Newton y Gottfried Wilhelm Leibniz:</strong>
+          <br>
+          <img src="../Img/newton.jpg" alt="" width="30%">
+          <br>
+          Desarrolló el método de Newton-Raphson, fundamental para encontrar raíces de funciones no lineales.
+        </li>
+        <li><strong>Joseph-Louis Lagrange:</strong>
+          <br>
+          <img src="../Img/lagrange.jpg" alt="" width="25%">
+          <br>
+          Contribuyó a la teoría de interpolación y al desarrollo de métodos numéricos.
+        </li>
+        <li><strong>Carl Friedrich Gauss:</strong>
+          <br>
+          <img src="../Img/gauss.jpg" alt="" width="25%">
+          <br>
+          Su trabajo en análisis numérico y métodos de ajuste ha influido en la resolución de ecuaciones no lineales.
+        </li>
+      </ul>
+      <button class="btn btn-danger" type="button" data-bs-dismiss="offcanvas">Cerrar</button>
+    </div>
+  </div>
+  <!-- Fin Off
+  Bootstrap JavaScript -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

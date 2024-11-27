@@ -1,0 +1,92 @@
+Listado de rutas de carpetas para el volumen Acer
+El número de serie del volumen es 3E1F-EB48
+C:\GIT\PROYECTOA\ANALISIS
+¦   index.html
+¦   mapa_directorio.txt
+¦   menu.css
+¦   primero temas fixed.rar
+¦   README.md
+¦   
++---Diferenciacion-numerica
+¦   ¦   bibliografia.html
+¦   ¦   style.css
+¦   ¦   
+¦   +---Euler
+¦   ¦       euler.js
+¦   ¦       interfaz.html
+¦   ¦       style.css
+¦   ¦       
+¦   +---Euler-mejorado
+¦   ¦       euler-mejorado.js
+¦   ¦       interfaz.html
+¦   ¦       style.css
+¦   ¦       
+¦   +---Runge-kutta
+¦   ¦       interfaz.html
+¦   ¦       rugen-kutta.js
+¦   ¦       style.css
+¦   ¦       
+¦   +---Taylor-3-terminos
+¦           interfaz.html
+¦           style.css
+¦           Taylor-3-terminos.rar
+¦           taylor.js
+¦           
++---Img
+¦       arquimedes.jpg
+¦       euclides.jpg
+¦       gauss.jpg
+¦       gottfried.jpg
+¦       Henry Leon Lebesgue.2.jpg
+¦       jhon.jpg
+¦       lagrange.jpg
+¦       lorentEuler.jpg
+¦       newton.jpg
+¦       Ostrowski.jpg
+¦       
++---Integracion-numerica
+¦   ¦   bibliografia.html
+¦   ¦   style.css
+¦   ¦   
+¦   +---Primeros-temas
+¦   ¦       Documentos - Acceso directo.lnk
+¦   ¦       interfaz.html
+¦   ¦       style.css
+¦   ¦       trapSimp.js
+¦   ¦       
+¦   +---Romberg
+¦           interfaz.html
+¦           romberg.js
+¦           style.css
+¦           
++---Interpolacion-ajus-curvas
+¦   ¦   bibliografia.html
+¦   ¦   style.css
+¦   ¦   
+¦   +---Diferencias-divididas-Newton
+¦   +---Interpolacion-lineal
+¦   +---Lagrange
+¦   +---Regresion-minimos-cuadrados
++---Introduccion
+¦   ¦   bibliografia.html
+¦   ¦   style.css
+¦   ¦   
+¦   +---Raices-enteras-ea
+¦   +---Raices-multiples-ea
++---Sol-ecua-no-linelaes
+¦   ¦   bibliografia.html
+¦   ¦   style.css
+¦   ¦   
+¦   +---Biseccion
+¦   +---Newton-Raphson
+¦   +---Newton-Raphson-modificado
+¦   +---Punto-fijo
+¦   +---Regla-falsa
+¦   +---Secante
++---Sol-sistemas-ecua-lineales
+    ¦   bibliografia.html
+    ¦   style.css
+    ¦   
+    +---Gauss-Jordan
+    +---Gauss-Seidel
+    +---Jacobi

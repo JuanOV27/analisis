@@ -1,11 +1,14 @@
 /* Estilo general */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 .navbar {
-    background-color: #333;
+    background-color: #ff0000;
     color: #fff;
     padding: 10px 20px;
     position: sticky;
@@ -13,6 +16,7 @@ body {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .navbar-container {
@@ -41,188 +45,64 @@ body {
 .menu a {
     color: #fff;
     text-decoration: none;
-    font-size: 1em;
-    padding: 8px 12px;
-    border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
-.menu a:hover {
-    background-color: #555;
+.nav-link:hover {
+    background-color: #b0cde2;
 }
 
-/* Dropdown oculto por defecto */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #444;
-    min-width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.dropdown-menu {
+    background-color: #b0cde2;
+    color: #000000;
     border-radius: 4px;
 }
 
-.dropdown-content li {
-    margin: 0;
-}
-
-.dropdown-content a {
-    display: block;
+.dropdown-item {
+    color: #000000;
     padding: 10px 15px;
-    color: #fff;
     text-decoration: none;
-    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    
 }
 
-.dropdown-content a:last-child {
-    border-bottom: none;
+.dropdown-item:hover {
+    background-color: #fffafa;
 }
 
-.dropdown-content a:hover {
-    background-color: #666;
-}
-
-/* Mostrar dropdown solo al pasar el cursor */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Estilo para dispositivos móviles */
-@media (max-width: 768px) {
-    .menu ul {
-        flex-direction: column;
-    }
-
-    .menu li {
-        margin: 10px 0;
-    }
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-}
-h3 {
+h1, h2, h3 {
     color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
     border-bottom: 2px solid #3498db;
     padding-bottom: 5px;
 }
-h5 {
-    color: #34495e;
-    margin-top: 20px;
-}
-p {
-    margin: 10px 0;
-}
+
 ul {
     margin-left: 20px;
+    list-style-type: disc;
 }
+
 ul li {
     margin: 5px 0;
 }
+
 strong {
     color: #2980b9;
 }
-.section-title {
-    color: #8e44ad;
-    font-size: 1.2em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-.formula {
-    font-family: "Courier New", Courier, monospace;
-    background-color: #ecf0f1;
-    padding: 10px;
-    margin: 10px 0;
-    display: inline-block;
-    border-left: 4px solid #3498db;
-}
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-}
-h3 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
-}
-h5 {
-    color: #34495e;
-    margin-top: 20px;
-}
+
 p {
     margin: 10px 0;
 }
-ul {
-    margin-left: 20px;
-}
-ul li {
-    margin: 5px 0;
-}
-strong {
-    color: #2980b9;
-}
-.section-title {
-    color: #8e44ad;
-    font-size: 1.2em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-.formula {
-    font-family: "Courier New", Courier, monospace;
-    background-color: #ecf0f1;
-    padding: 10px;
-    margin: 10px 0;
-    display: inline-block;
-    border-left: 4px solid #3498db;
-}
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-}
-h3 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
-}
-.method-title {
-    color: #8e44ad;
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-.formula {
-    font-family: "Courier New", Courier, monospace;
-    background-color: #ecf0f1;
-    padding: 10px;
-    margin: 10px 0;
-    display: inline-block;
-    border-left: 4px solid #3498db;
-}
-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-}
-button:hover {
-    background-color: #2980b9;
+.container {
+    padding: 20px;
 }

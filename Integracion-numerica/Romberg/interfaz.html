@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integración Numérica - Método de Romberg</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../navstile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script> 
+</head>
+<body>
+ <!-- Inicio NavBar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(255, 0, 0);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Análisis Numérico</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <!-- Dropdown Menu: Introducción al A.N. -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Introducción al A.N.
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../../Introduccion/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../../Introduccion/Raices-multiples-ea/interfaz.html">Raíces múltiples de una 
+        <br>ecuación lineal</a></li>
+        <li><a class="dropdown-item" href="../../Introduccion/Raices-enteras-ea/interfaz.html">Raíces enteras de una 
+        <br> ecuación lineal</a></li>
+      </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Solución de E.N.L.
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../../Sol-ecua-no-linelaes/bibliografia.html">Bibliografía</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../../Sol-ecua-no-linelaes/Biseccion/interfaz.html">Bisección</a></li>
+          <li><a class="dropdown-item" href="../../Sol-ecua-no-linelaes/Newton-Raphson/interfaz.html">Newton-Raphson</a></li>
+          <li><a class="dropdown-item" href="../../Sol-ecua-no-linelaes/Newton-Raphson-modificado/interfaz.html">Newton-Raphson Modificado</a></li>
+          <li><a class="dropdown-item" href="../../Sol-ecua-no-linelaes/Punto-fijo/interfaz.html">Punto Fijo</a></li>
+          <li><a class="dropdown-item" href="../../Sol-ecua-no-linelaes/Regla-falsa/interfaz.html">Regla Falsa</a></li>
+          <li><a class="dropdown-item" href="../../Sol-ecua-no-linelaes/Secante/interfaz.html">Secante</a></li>
+        </ul>
+        </li>
+      <!-- Other Nav Items -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Solución de
+         sistemas de E.L.
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../../Sol-sistemas-ecua-lineales/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../../Sol-sistemas-ecua-lineales/Gauss-Jac-sei/interfaz.html">Gauss-Seidel / Gauss-Jacobi</a></li>
+      </ul>
+      </li>
+      
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Interpolación y ajustes de curvas
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../../Interpolacion-ajus-curvas/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../../Interpolacion-ajus-curvas/Diferencias-divididas-Newton/interfaz.html">Diferencias Divididas de Newton</a></li>
+        <li><a class="dropdown-item" href="../../Interpolacion-ajus-curvas/Interpolacion-lineal/interfaz.html">Interpolación Lineal</a></li>
+        <li><a class="dropdown-item" href="../../Interpolacion-ajus-curvas/Lagrange/interfaz.html">Lagrange</a></li>
+        <li><a class="dropdown-item" href="../../Interpolacion-ajus-curvas/Regresion-minimos-cuadrados/regresion-lineal/interfaz.html">Regresion lineal</a></li>
+        <li><a class="dropdown-item" href="../../Interpolacion-ajus-curvas/Regresion-minimos-cuadrados/regresion-polinomial/interfaz.html">Regresion polinomial</a></li>
+      </ul>
+      </li>
+      <!-- Dropdown Menu: Integración numérica -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Integración numérica
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../../Integracion-numerica/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../../Integracion-numerica/Primeros-temas/interfaz.html">Primeros Temas</a></li>
+        <li><a class="dropdown-item" href="../../Integracion-numerica/Romberg/interfaz.html">Método de Romberg</a></li>
+      </ul>
+      </li>
+      <!-- Dropdown Menu: Diferenciación numérica -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Diferenciación numérica
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../../Diferenciacion-numerica/bibliografia.html">Bibliografía</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="../../Diferenciacion-numerica/Taylor-3-terminos/interfaz.html">Método de Taylor 3 términos</a></li>
+        <li><a class="dropdown-item" href="../../Diferenciacion-numerica/Euler/interfaz.html">Método de Euler</a></li>
+        <li><a class="dropdown-item" href="../../Diferenciacion-numerica/Runge-kutta/interfaz.html">Método de Runge Kutta</a></li>
+        <li><a class="dropdown-item" href="../../Diferenciacion-numerica/Euler-mejorado/interfaz.html">Método de Euler mejorado</a></li>
+      </ul>
+      </li>
+    </ul>
+    </div>
+  </div>
+  </nav>
+  <!-- Fin NavBar -->
+    <div class="container">
+                  
+   <br>
+        <h1>Integración Numérica - Método de Romberg</h1>
+        <div class="content">
+            <form id="integration-form">
+                <label for="function">Función (f(x)):</label>
+                <input type="text" id="function" placeholder="Ej: ln(5-4cos(x))" required>
+                
+                <label for="lower-limit">Límite Inferior:</label>
+                <input type="text" id="lower-limit" placeholder="Ej: 0 o pi" required>
+                
+                <label for="upper-limit">Límite Superior:</label>
+                <input type="text" id="upper-limit" placeholder="Ej: pi o e" required>
+                
+                <label for="intervals">Número de Iteraciones:</label>
+                <input type="number" id="intervals" required>
+            
+                <label for="angle-unit">Unidad de Ángulo:</label>
+                <select id="angle-unit">
+                    <option value="rad">Radianes</option>
+                    <option value="deg">Grados</option>
+                </select>
+            
+                <button type="button" onclick="calculateRomberg()">Calcular</button>
+            </form>
+            
+            <div class="syntax-guide">
+                <h2>Guía de Sintaxis</h2>
+                <ul>
+                    <li><strong>ln(x):</strong> Math.log(x) — Logaritmo natural de x.</li>
+                    <li><strong>cos(x):</strong> Math.cos(x) — Coseno de x.</li>
+                    <li><strong>sin(x):</strong> Math.sin(x) — Seno de x.</li>
+                    <li><strong>tan(x):</strong> Math.tan(x) — Tangente de x.</li>
+                    <li><strong>sqrt(x):</strong> Math.sqrt(x) — Raíz cuadrada de x.</li>
+                    <li><strong>e:</strong> Math.E — La constante de Euler (~2.718).</li>
+                    <li><strong>exp(x):</strong> Math.exp(x) — Exponencial de x, equivalente a \( e^x \).</li>
+                    <li><strong>pi:</strong> Math.PI — El número Pi (~3.1416).</li>
+                    <li><strong>Operadores:</strong></li>
+                    <ul>
+                        <li><strong>+</strong> — Suma.</li>
+                        <li><strong>-</strong> — Resta.</li>
+                        <li><strong>*</strong> — Multiplicación.</li>
+                        <li><strong>/</strong> — División.</li>
+                        <li><strong>^</strong> — Potencias, ejemplo: `250^x` es equivalente a `Math.pow(250, x)`.</li>
+                    </ul>
+                </ul>
+            </div>
+            
+        </div>
+
+        <!-- Tabla de x y f(x) -->
+        <div id="results">
+            <h2>Resultados - Tabla de x y f(x)</h2>
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>f(x)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Tabla de Romberg -->
+        <div id="romberg-results">
+            <h2>Valores de la Tabla de Romberg</h2>
+            <table id="romberg-table">
+                <thead>
+                    <tr>
+                        <th>R(i, j)</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+
+        <!-- Resultado final -->
+        <div id="final-result">
+            <h2>Resultado Final: <span id="final-value"></span></h2>
+        </div>
+
+        <div class="chart-container">
+            <h2>Gráfica de Convergencia - Método de Romberg</h2>
+            <canvas id="rombergChart"></canvas>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="romberg.js" defer></script>
+</body>
+</html>
