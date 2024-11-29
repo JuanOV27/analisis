@@ -1,34 +1,54 @@
+/* Ajuste general */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
-    text-align: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Título */
 h1 {
-    background-color: #4CAF50;
+    background-color: white;
     color: white;
     padding: 20px 0;
+    width: 80%;
     margin: 0;
+    text-align: center;
 }
 
+/* Contenedor principal */
+.main-container {
+    width: 90%;
+    max-width: 12000px; /* Para evitar que se alargue demasiado */
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Tabla */
 .table-container {
     overflow-x: auto;
-    margin: 20px auto;
-    width: 90%;
+    max-width: 1000px; /* Limitar el tamaño máximo */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
 }
 
@@ -43,46 +63,55 @@ td input {
     box-sizing: border-box;
 }
 
+/* Botones */
 .buttons {
-    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
+/* Resultados */
 .result-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
-    margin: 20px auto;
-}
-
-.result-grafico {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 20px auto;
+    gap: 20px;
+    width: 60%;
 }
 
 .result, .summary {
-    width: 45%;
-    text-align: left;
+    flex: 1 1 45%; /* Proporciones ajustadas */
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .summary {
     background-color: #e0e0e0;
+}
+
+/* Gráfico */
+#grafico-container {
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo para el gráfico */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

@@ -1,111 +1,198 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fa;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f8f9fa;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Título */
 .title {
     text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 30px;
 }
 
+/* Tabla */
 .table-container {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #007bff;
     color: white;
+    font-weight: bold;
 }
 
+td {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Estilos de los inputs */
 input[type="number"] {
     width: 80%;
-    padding: 5px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
 }
 
 button {
-    padding: 8px 15px;
-    margin-top: 10px;
-    background-color: #4CAF50;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
 }
 
+/* Botones de acciones */
+button.delete-row {
+    background-color: #dc3545;
+}
+
+button.delete-row:hover {
+    background-color: #c82333;
+}
+
+/* Sección de resultados */
 .results {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .left-container, .right-container {
     width: 48%;
+    margin-bottom: 20px;
 }
 
+.left-container h3, .right-container h3 {
+    font-size: 1.2rem;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+#values, #initial-matrix, #final-matrix, #coefficients {
+    font-size: 1rem;
+    color: #495057;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    white-space: pre-wrap;
+}
+
+/* Estilo para el polinomio final */
 .polynomial {
     text-align: center;
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
+#polynomial {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Estilos para el gráfico */
 .chart {
-    margin-top: 30px;
     text-align: center;
-}
-
-h3 {
-    color: #333;
-}
-
-p {
-    font-size: 1.2em;
-    color: #555;
 }
 
 #polynomial-chart {
     width: 100%;
     height: 400px;
-    margin-top: 20px;
 }
 
-button {
-    background-color: #28a745;
-    transition: background-color 0.3s ease;
+/* Responsividad */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .results {
+        flex-direction: column;
+    }
+
+    .left-container, .right-container {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    input[type="number"] {
+        width: 70%;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
 
-button:hover {
-    background-color: #218838;
-}
+@media (max-width: 480px) {
+    .table-container {
+        font-size: 0.8rem;
+    }
 
-#add-row, #calculate {
-    margin-top: 20px;
+    button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    #polynomial {
+        font-size: 1rem;
+    }
 }

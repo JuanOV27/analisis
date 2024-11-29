@@ -177,7 +177,7 @@
                                 <p>La <strong>interpolación de Lagrange</strong> utiliza polinomios de Lagrange para conectar varios puntos.</p>
                                 <p>Fórmula: \( P(x) = \sum_{i=0}^{n} y_i \prod_{\substack{0 \le j \le n \\ j \ne i}} \frac{x - x_j}{x_i - x_j} \)</p>
                                 <p>Este método es útil para interpolar un conjunto de puntos mediante un polinomio que pasa exactamente por cada uno de los puntos dados.</p>
-                                <button type="button" onclick="location.href='Interpolacion-Lagrange/interfaz.html'">Probar Método</button>
+                                <button type="button" onclick="location.href='Lagrange/interfaz.html'">Probar Método</button>
                               </div>
                               </div>
                             </div>
@@ -204,10 +204,31 @@
                               <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
                               <div class="card-body">
                                 <h3>Regresión de Mínimos Cuadrados</h3>
-                                <p>La <strong>regresión de mínimos cuadrados</strong> encuentra la curva que minimiza la suma de los cuadrados de las diferencias entre los puntos de datos y la curva.</p>
-                                <p>Fórmula: \( S = \sum_{i=1}^{n} (y_i - f(x_i))^2 \)</p>
+                                  <p>Fórmula: \( S = \sum_{i=1}^{n} (y_i - f(x_i))^2 \)</p>
+
                                 <p>Este método se utiliza para ajustar una curva a un conjunto de datos de manera que la suma de los cuadrados de las diferencias entre los valores observados y los valores predichos por la curva sea mínima.</p>
-                                <button type="button" onclick="location.href='Minimos-Cuadrados/interfaz.html'">Probar Método</button>
+
+
+                                <h4>Regresión Lineal</h4>
+
+                                <p>Este método se utiliza para predecir el valor de una variable dependiente basada en el valor de una variable independiente.</p>
+                                <p>Fórmula: \( y = mx + b \)</p>
+                                <p>La <strong>regresión lineal</strong> es un método para modelar la relación entre una variable dependiente y una variable independiente mediante una línea recta.</p>
+                                   <p>Este método se utiliza para ajustar una curva a un conjunto de datos de manera que la suma de los cuadrados de las diferencias entre los valores observados y los valores predichos por la curva sea mínima.</p>
+                                   <button type="button" onclick="location.href='Regresion-minimos-cuadrados/regresion-lineal/interfaz.html'">Probar Regresión Lineal</button>
+   
+
+                                  <br>
+                                <h4>Regresión Polinomial</h4>
+
+                             <p>Este método se utiliza para ajustar una curva polinómica a un conjunto de datos, permitiendo una mayor flexibilidad en el modelado de relaciones no lineales.</p>
+                             <p>Fórmula: \( y = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 \)</p>
+                             <p>La <strong>regresión polinomial</strong> es una extensión de la regresión lineal que permite modelar la relación entre una variable dependiente y una variable independiente mediante un polinomio.</p>
+                             <button type="button" onclick="location.href='Regresion-minimos-cuadrados/regresion-polinomial/interfaz.html'">Probar Regresión Polinomial</button>
+                                
+                             <br>
+
+                            
                               </div>
                               </div>
                             </div>

@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const coefficientsContainer = document.getElementById('coefficients');
     const polynomialContainer = document.getElementById('polynomial');
     const polynomialChart = document.getElementById('polynomial-chart');
-    
+
+    // Variable para almacenar la instancia del gráfico
+    let chartInstance = null;
+
     // Función para agregar una fila a la tabla
     addRowButton.addEventListener('click', function() {
         const newRow = dataTable.insertRow();
@@ -41,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     calculateButton.addEventListener('click', function() {
         const data = getTableData();
         const n = data.length;
-        const grado = n-1; // Grado del polinomio (modificar si se permite cambiar el grado dinámicamente)
+        const grado = n - 1; // Grado del polinomio (modificar si se permite cambiar el grado dinámicamente)
 
         if (n < grado + 1) {
             alert("Por favor ingrese al menos tres puntos de datos para un polinomio de grado 2.");
@@ -170,11 +173,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         const ctx = polynomialChart.getContext('2d');
-        new Chart(ctx, {
+
+        // Si ya existe un gráfico, destruirlo antes de crear uno nuevo
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+
+        // Crear el nuevo gráfico
+        chartInstance = new Chart(ctx, {
             type: 'line',
             data: chartData,
             options: {
                 responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
                 scales: {
                     x: {
                         type: 'linear',

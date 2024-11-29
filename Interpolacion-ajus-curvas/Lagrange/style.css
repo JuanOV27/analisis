@@ -1,78 +1,169 @@
+/* Estilos generales del cuerpo */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7fafc;
+    padding: 30px;
     color: #333;
+    line-height: 1.6;
 }
+
+/* Título principal */
 h1 {
     text-align: center;
     color: #4CAF50;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
+
+/* Contenedor principal */
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
+/* Tabla */
 table {
     width: 100%;
-    margin-bottom: 20px;
-    border-collapse: collapse;
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 th, td {
-    padding: 12px;
+    padding: 16px;
     text-align: center;
     border: 1px solid #ddd;
+    font-size: 1rem;
+    color: #555;
 }
-input {
-    padding: 8px;
+
+th {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+}
+
+td input {
+    padding: 10px;
     font-size: 14px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
     width: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     text-align: center;
 }
+
+td button {
+    padding: 6px 12px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+td button:hover {
+    background-color: #e5533e;
+}
+
+/* Botón principal */
 button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
+
 button:hover {
     background-color: #45a049;
 }
+
+/* Estilo de los resultados */
 .result {
     margin-top: 30px;
     background-color: #f9f9f9;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 .result-inner {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
+
 #polinomiosOriginales, #polinomiosSimplificados {
-    width: 45%;
-    padding: 10px;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 #polinomiosOriginales {
     border-right: 1px solid #ddd;
 }
+
 h3 {
     color: #4CAF50;
     text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
+
+/* Estilo del gráfico */
 .grafico {
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
 }
+
 canvas {
     max-width: 100%;
-    height: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .result-inner {
+        flex-direction: column;
+    }
+
+    #polinomiosOriginales, #polinomiosSimplificados {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
 }

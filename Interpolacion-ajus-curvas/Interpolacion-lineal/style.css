@@ -9,7 +9,7 @@ body {
 header {
     text-align: center;
     padding: 1em;
-    background-color: #4caf50;
+    background-color: white;
     color: white;
 }
 
@@ -57,5 +57,7 @@ button:hover {
 canvas {
     display: block;
     margin: auto;
+    width: 80% !important;
+    height: auto !important;
     border: 1px solid #ddd;
 }
